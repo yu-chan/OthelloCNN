@@ -64,3 +64,4 @@ GUIを実装する
 - [javaとc++、どちらが統計解析、機械学習、データマイニングに向いていますか？](https://teratail.com/questions/7532)
 - [「機械学習向けプログラミング言語の使い分け – RCO の場合」というタイトルで発表しました](https://www.rco.recruit.co.jp/career/engineer/blog/51/)
 - [Rと連携するアプリケーションを作ってみる。](http://qiita.com/mm_sys/items/596327d9ccfd1b46c791)
+- [C言語でのニューラルネットワークの実装](http://caramelpudding.hatenablog.com/entry/2016/03/09/131228)
