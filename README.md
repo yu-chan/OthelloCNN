@@ -3,6 +3,18 @@
 ##テーマ
 オセロに対する 畳み込みニューラルネットワーク(Convolutional Neural Network : CNN) の適用と評価
 
+##Why?
+1.なぜこのテーマにしたのか？  
+2.なぜオセロを選んだ？  
+3.何故CNNを選んだか？  
+4.このテーマの目的は？  
+5.何故この言語を選んだか？  
+6.オセロにCNNを適用したけど、どうするの？  
+7.NNの仕組みは？  
+8.CNNの仕組みは？  
+9.このテーマは今後、どう活かされるか？  
+10.このテーマは何に役立てるか？  
+
 ##なぜこのテーマにしたのか？
 １.機械学習に興味を持ったから  
 2.オセロを作ってみたいと思ったから  
@@ -44,6 +56,8 @@ C＋＋とRの連携
 CNNを調べる
 
 ターミナルでまず動かす
+
+畳み込みについて勉強
 
 ##計画
 研究のテーマで、「自分の目指すものは何か？」をまず決める
@@ -89,3 +103,5 @@ GUIを実装する
 - [「AI」「機械学習」「ディープラーニング」は、それぞれ何が違うのか](http://www.atmarkit.co.jp/ait/articles/1608/12/news056.html)
 - [ニューラルネットワーク](http://www.geocities.co.jp/SiliconValley-Cupertino/3384/nn/NN.html)
 - [畳み込みニューラル・ネットワークの使い方、わかりますか？](http://systemdesign.altera.co.jp/can-you-see-using-convolutional-neural-networks/)
+- [使える！ロジカルシンキング（6）卒論テーマはこう決める](http://college.nikkei.co.jp/article/55284410.html)
+- [卒業論文ってどこから始めればいいんでしょう...](http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1187715731)
