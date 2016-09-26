@@ -105,3 +105,4 @@ GUIを実装する
 - [畳み込みニューラル・ネットワークの使い方、わかりますか？](http://systemdesign.altera.co.jp/can-you-see-using-convolutional-neural-networks/)
 - [使える！ロジカルシンキング（6）卒論テーマはこう決める](http://college.nikkei.co.jp/article/55284410.html)
 - [卒業論文ってどこから始めればいいんでしょう...](http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1187715731)
+- [卒業研究の進め方を調べてみた](https://samuraikid520.wordpress.com/2014/04/12/%E5%8D%92%E6%A5%AD%E7%A0%94%E7%A9%B6%E3%81%AE%E9%80%B2%E3%82%81%E6%96%B9%E3%82%92%E8%AA%BF%E3%81%B9%E3%81%A6%E3%81%BF%E3%81%9F/)
