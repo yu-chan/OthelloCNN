@@ -1,0 +1,3 @@
+﻿  neural.c
+c:\users\user\documents\visual studio 2013\projects\neural\neural\neural.c(27): warning C4101: 'inet_input' : ローカル変数は 1 度も使われていません。
+  neural.vcxproj -> c:\users\user\documents\visual studio 2013\Projects\neural\Debug\neural.exe
