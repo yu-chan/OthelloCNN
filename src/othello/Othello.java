@@ -1,7 +1,10 @@
 package othello;
 
+import javax.swing.JFrame;
+
 public class Othello {
 	public static void main(String args[]) {
-		System.out.println("Hello");
+		JFrame frame = new JFrame("ÉIÉZÉç");
+		frame.setVisible(true);
 	}
 }
