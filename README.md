@@ -107,3 +107,5 @@ GUIを実装する
 - [卒業論文ってどこから始めればいいんでしょう...](http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1187715731)
 - [卒業研究の進め方を調べてみた](https://samuraikid520.wordpress.com/2014/04/12/%E5%8D%92%E6%A5%AD%E7%A0%94%E7%A9%B6%E3%81%AE%E9%80%B2%E3%82%81%E6%96%B9%E3%82%92%E8%AA%BF%E3%81%B9%E3%81%A6%E3%81%BF%E3%81%9F/)
 - [オブジェクト指向プログラミングとJava言語](http://www.aerith.net/design/othello-j.html)
+- [オセロプログラムの作り方](http://hp.vector.co.jp/authors/VA015468/platina/algo/)
+- [オセロプログラムを作ってみた](http://d.hatena.ne.jp/poor_code/20090711/1247269299)

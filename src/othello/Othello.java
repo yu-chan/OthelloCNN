@@ -4,33 +4,26 @@ import java.awt.Insets;
 import javax.swing.JFrame;
 import java.awt.Container;
 
-public class Othello {
+public class Othello extends JFrame {
+	static final int SIZE = 50;
+	static final int MAS = 8;
+	static final int WIDTH = MAS * SIZE;
+	static final int HEIGHT = MAS * SIZE;
+	static final int X_POS = 200;
+	static final int Y_POS = 200;
+	
+	public Othello() {
+		setTitle("オセロ");
+		pack();
+		
+		Insets insets = getInsets();
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(X_POS, Y_POS, WIDTH + insets.left + insets.right, HEIGHT + insets.top + insets.bottom);
+		setVisible(true);
+	}
+	
 	public static void main(String args[]) {
-		JFrame frame = new JFrame("オセロ");
-//		frame.getInsets().set(15, 4,4,4);
-		frame.pack();
-		Insets insets =  frame.getInsets();
-//		insets.set(100,  100, 100, 100);
-		/*insets.left = 100;
-		insets.right = 100;
-		insets.top = 100;
-		insets.bottom = 100;*/
-		/*内側の大きさ　横:-8   縦:-34*/
-		frame.setBounds(200, 200, 200 + insets.left + insets.right, 200 + insets.top + insets.bottom);
-//		frame.setBounds(200, 200, 100, 100);
-		//frame.setSize(100, 100);
-		frame.setVisible(true);
-		System.out.println(insets.left);
-		System.out.println(insets.right);
-		System.out.println(insets.top);
-		System.out.println(insets.bottom);
-		System.out.println(frame.getInsets().left);
-		System.out.println(frame.getInsets().right);
-		System.out.println(frame.getInsets().top);
-		System.out.println(frame.getInsets().bottom);
-		System.out.println(frame.getInsets());
-		System.out.println(insets);
-		System.out.println(100 + insets.left + insets.right);
-		System.out.println(100 + insets.top + insets.bottom);
+		Othello othello = new Othello();
 	}
 }
