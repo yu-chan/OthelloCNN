@@ -2,6 +2,8 @@ package othello;
 
 import java.awt.Insets;
 import javax.swing.JFrame;
+
+import java.awt.Color;
 import java.awt.Container;
 
 public class Othello extends JFrame {
@@ -20,6 +22,10 @@ public class Othello extends JFrame {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(X_POS, Y_POS, WIDTH + insets.left + insets.right, HEIGHT + insets.top + insets.bottom);
+		
+		Board board = new Board(SIZE, MAS, WIDTH, HEIGHT);
+		getContentPane().add(board);
+		
 		setVisible(true);
 	}
 	
