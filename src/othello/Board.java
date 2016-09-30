@@ -3,8 +3,10 @@ package othello;
 import nn.GameState;
 import javax.swing.JPanel;
 import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
 
-public class Board extends JPanel {
+public class Board extends JPanel implements MouseListener, Observer {
 	/**
 	 * 
 	 */
@@ -16,12 +18,21 @@ public class Board extends JPanel {
 	static final int WHITE = -1;
 	
 	public Board(int size, int mas, int width, int height) {
+		addMouseListener(this);
+		
 		this.size = size;
 		this.mas = mas;
 		this.width = width;
 		this.height = height;
 		
 		state = new GameState(mas);
+		
+	}
+	
+	public void update(Observable o, Object arg) {
+//		repaint();
+//		invalidate();
+//		validate();
 	}
 	
 	public void paintComponent(Graphics g) {
@@ -48,5 +59,41 @@ public class Board extends JPanel {
 				}
 			}
 		}
+	}
+	
+	public void mousePressed(MouseEvent e) {
+		int x = e.getX() / size;
+		int y = e.getY() / size;
+		
+		//駒を置く
+		if(state.data[x][y] == 0) {
+			if(state.turn % 2 == 0) {//CPUのターンなら、白を置く
+				state.data[x][y] = -1;
+			} else if(state.turn % 2 == 1) {//プレイヤーのターンなら、黒を置く
+				state.data[x][y] = 1;
+			}
+			state.turn++;
+		}
+		
+		System.out.println("押された");
+		System.out.println(state.data[x][y]);
+		
+		repaint();
+	}
+	
+	public void mouseClicked(MouseEvent e) {
+		
+	}
+	
+	public void mouseEntered(MouseEvent e) {
+		
+	}
+	
+	public void mouseExited(MouseEvent e) {
+		
+	}
+	
+	public void mouseReleased(MouseEvent e) {
+		
 	}
 }
