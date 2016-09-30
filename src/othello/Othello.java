@@ -3,10 +3,14 @@ package othello;
 import java.awt.Insets;
 import javax.swing.JFrame;
 
-import java.awt.Color;
-import java.awt.Container;
+//import java.awt.Color;
+//import java.awt.Container;
 
 public class Othello extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static final int SIZE = 50;
 	static final int MAS = 8;
 	static final int WIDTH = MAS * SIZE;

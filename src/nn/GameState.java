@@ -1,7 +1,7 @@
 package nn;
 
 public class GameState {
-	int data[][];
+	public int data[][];
 	int turn;
 	int player;
 	int black;
@@ -9,5 +9,16 @@ public class GameState {
 	
 	public GameState(int mas) {
 		data = new int[mas][mas];
+		
+		//•:1 ”’:-1 ‚È‚µ:0
+		data[3][3] = 1;
+		data[3][4] = -1;
+		data[4][3] = -1;
+		data[4][4] = 1;
+		
+		turn = 0;
+		player = 1;//0:CPU 1:ƒvƒŒƒCƒ„[
+		black = 2;
+		white = 2;
 	}
 }
