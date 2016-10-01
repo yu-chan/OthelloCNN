@@ -21,4 +21,54 @@ public class GameState {
 		black = 2;
 		white = 2;
 	}
+	
+	//リバースする
+	public void reverse(int x, int y) {
+	}
+	
+	//置けるかどうか
+	public boolean whether_put(int x, int y) {
+		
+		//駒があるなら、置けない
+		if(data[x][y] != 0) {
+			return false;
+		}
+		
+		//逆にできないなら、置けない
+		if(whether_reverse(x, y) == false) {
+			return false;
+		}
+		
+		//駒を置く
+		data[x][y] = 1;
+		turn++;
+		
+		return true;
+	}
+	
+	//リバースできるか
+	public boolean whether_reverse(int x, int y) {
+		return false;
+	}
+	
+	//パスをチェックする
+	public boolean checkPass() {
+		return true;
+	}
+	
+	//白と黒の駒を数える
+	public void countPiece() {
+		black = 0;
+		white = 0;
+		
+		for(int x = 0; x < 8; x++) {
+			for(int y = 0; y < 8; y++) {
+				if(data[x][y] == 1) {
+					black++;
+				} else if(data[x][y] == -1) {
+					white++;
+				}
+			}
+		}
+	}
 }
