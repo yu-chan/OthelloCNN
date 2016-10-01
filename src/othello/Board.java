@@ -77,6 +77,7 @@ public class Board extends JPanel implements MouseListener, Observer {
 		
 		System.out.println("‰Ÿ‚³‚ê‚½");
 		System.out.println(state.data[x][y]);
+		System.out.println(state.turn);
 		
 		repaint();
 	}

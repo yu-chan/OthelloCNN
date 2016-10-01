@@ -53,6 +53,24 @@ public class GameState {
 	
 	//パスをチェックする
 	public boolean checkPass() {
+		
+		//ボードを走査する
+		for(int x = 0; x < 8; x++) {
+			for(int y = 0; y < 8; y++) {
+				
+				//駒があるところは、飛ばす
+				if(data[x][y] != 0) {
+					continue;
+				}
+				
+				//リバースできるなら、パスしない
+				if(whether_reverse(x, y) == true) {
+					return false;
+				}
+			}
+		}
+		
+		//パスする
 		return true;
 	}
 	
