@@ -48,6 +48,65 @@ public class GameState {
 	
 	//リバースできるか
 	public boolean whether_reverse(int x, int y) {
+		int dir[][] = {
+				{-1, -1}, {0, -1}, {1, -1},
+				{-1, 0},			{1, 0},
+				{-1, 1}, {0, 1}, {1, 1}
+		};
+		
+		for(int i = 0; i < 8; i++) {
+			//隣のマス
+			int x0 = x + dir[i][0];
+			int y0 = y + dir[i][0];
+			
+			//隣のマスがボード外なら、飛ばす
+			if(isOut(x0, y0) == true) {
+				continue;
+			}
+			
+			int nextState = data[x0][y0];
+			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
+				continue;
+			} else if(nextState == 0) {//何もないなら、飛ばす
+				continue;
+			}
+			
+			//隣のマスから走査して、黒があればリバースする
+			int j = 2;
+			while(true) {
+				int x1 = x + dir[i][0] * j;
+				int y1 = y + dir[i][1] * j;
+				if(isOut(x1, y1) == true) {
+					break;
+				}
+				
+				//自分の駒があれば、リバースする
+				if(data[x1][y1] == 1) {
+					for(int k = 1; k < j; k++) {
+						int x2 = x + dir[i][0] * k;
+						int y2 = y + dir[i][1] * k;
+						data[x2][y2] = 1;
+					}
+					break;
+				}
+				
+				//走査しているマスが何もないなら、飛ばす
+				if(data[x1][y1] == 0) {
+					break;
+				}
+				
+				j++;
+			}
+			
+		}
+		
+		return false;
+	}
+	
+	public boolean isOut(int x, int y) {
+		if(x < 0 || y < 0 || x >= 8 || y >= 8) {
+			return true;
+		}
 		return false;
 	}
 	
