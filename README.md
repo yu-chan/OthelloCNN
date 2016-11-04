@@ -109,3 +109,4 @@ GUIを実装する
 - [オブジェクト指向プログラミングとJava言語](http://www.aerith.net/design/othello-j.html)
 - [オセロプログラムの作り方](http://hp.vector.co.jp/authors/VA015468/platina/algo/)
 - [オセロプログラムを作ってみた](http://d.hatena.ne.jp/poor_code/20090711/1247269299)
+- [リバーシプログラムの作り方](http://www.es-cube.net/es-cube/reversi/sample/)
