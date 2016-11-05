@@ -97,7 +97,7 @@ public class Board extends JPanel implements MouseListener, Observer {
 				System.out.println("”’‚Í‰Ÿ‚¹‚È‚©‚Á‚½");
 			}
 //			state.turn++;
-//			cpu.put(state);
+//			cpu.put(state, WHITE);
 		}
 		
 		/*
