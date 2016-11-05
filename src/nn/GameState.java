@@ -23,8 +23,8 @@ public class GameState {
 	}
 	
 	//リバースする
-	public void reverse(int x, int y) {
-	}
+//	public void reverse(int x, int y) {
+//	}
 	
 	//置けるかどうか
 	public boolean whether_put(int x, int y, int color) {
@@ -35,12 +35,12 @@ public class GameState {
 			return false;
 		}
 		
-		/*
+		
 		//逆にできないなら、置けない
 		if(whether_reverse(x, y) == false) {
 			System.out.println("逆にできない");
 			return false;
-		}*/
+		}
 		
 		//駒を置く
 //		data[x][y] = color;
@@ -60,17 +60,20 @@ public class GameState {
 		for(int i = 0; i < 8; i++) {
 			//隣のマス
 			int x0 = x + dir[i][0];
-			int y0 = y + dir[i][0];
+			int y0 = y + dir[i][1];
 			
 			//隣のマスがボード外なら、飛ばす
 			if(isOut(x0, y0) == true) {
+				System.out.println("ボード外1 : " + i);
 				continue;
 			}
 			
 			int nextState = data[x0][y0];
 			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
+				System.out.println("隣は黒 : " + i);
 				continue;
 			} else if(nextState == 0) {//何もないなら、飛ばす
+				System.out.println("隣には何もなし : " + i);
 				continue;
 			}
 			
@@ -80,6 +83,7 @@ public class GameState {
 				int x1 = x + dir[i][0] * j;
 				int y1 = y + dir[i][1] * j;
 				if(isOut(x1, y1) == true) {
+					System.out.println("ボード外2 : " + i);
 					break;
 				}
 				
@@ -90,7 +94,8 @@ public class GameState {
 						int y2 = y + dir[i][1] * k;
 						data[x2][y2] = 1;
 					}
-					break;
+					return true;
+//					break;
 				}
 				
 				//走査しているマスが何もないなら、飛ばす

@@ -83,7 +83,7 @@ public class Board extends JPanel implements MouseListener, Observer {
 			}
 		} else if(state.turn % 2 == 0) { //CPUのターン
 			System.out.println("CPUのターン");
-			state.turn++;
+//			state.turn++;
 //			cpu.put(state);
 		}
 		
