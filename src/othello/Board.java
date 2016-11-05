@@ -67,7 +67,7 @@ public class Board extends JPanel implements MouseListener, Observer {
 		int x = e.getX() / size;
 		int y = e.getY() / size;
 		
-		if(state.turn == TURN) {
+		if(state.turn > TURN) {
 			System.out.println("ƒIƒZƒ‚ÍI—¹‚µ‚Ü‚µ‚½");
 		}
 		
