@@ -13,9 +13,11 @@ public class Board extends JPanel implements MouseListener, Observer {
 	private static final long serialVersionUID = 1L;
 	int size, mas, width, height;
 	GameState state;
+	CPU cpu;
 	
 	static final int BLACK = 1;
 	static final int WHITE = -1;
+	static final int TURN = 60;
 	
 	public Board(int size, int mas, int width, int height) {
 		addMouseListener(this);
@@ -26,7 +28,7 @@ public class Board extends JPanel implements MouseListener, Observer {
 		this.height = height;
 		
 		state = new GameState(mas);
-		
+		cpu = new CPU();
 	}
 	
 	public void update(Observable o, Object arg) {
@@ -65,6 +67,27 @@ public class Board extends JPanel implements MouseListener, Observer {
 		int x = e.getX() / size;
 		int y = e.getY() / size;
 		
+		if(state.turn == TURN) {
+			System.out.println("オセロは終了しました");
+		}
+		
+		
+		if(state.turn % 2 != 0) { //自分のターン
+			System.out.println("自分のターン");
+			if(state.whether_put(x,  y, BLACK)) {
+				state.turn++;
+				state.data[x][y] = BLACK;
+				System.out.println("playerは押せた");
+			} else {
+				System.out.println("playerは押せなかった");
+			}
+		} else if(state.turn % 2 == 0) { //CPUのターン
+			System.out.println("CPUのターン");
+			state.turn++;
+//			cpu.put(state);
+		}
+		
+		/*
 		//駒を置く
 		if(state.data[x][y] == 0) {
 			if(state.turn % 2 == 0) {//CPUのターンなら、白を置く
@@ -78,6 +101,7 @@ public class Board extends JPanel implements MouseListener, Observer {
 		System.out.println("押された");
 		System.out.println(state.data[x][y]);
 		System.out.println(state.turn);
+		*/
 		
 		repaint();
 	}

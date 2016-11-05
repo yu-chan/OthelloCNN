@@ -27,21 +27,24 @@ public class GameState {
 	}
 	
 	//置けるかどうか
-	public boolean whether_put(int x, int y) {
+	public boolean whether_put(int x, int y, int color) {
 		
 		//駒があるなら、置けない
 		if(data[x][y] != 0) {
+			System.out.println("駒があるから、置けない");
 			return false;
 		}
 		
+		/*
 		//逆にできないなら、置けない
 		if(whether_reverse(x, y) == false) {
+			System.out.println("逆にできない");
 			return false;
-		}
+		}*/
 		
 		//駒を置く
-		data[x][y] = 1;
-		turn++;
+//		data[x][y] = color;
+//		turn++;
 		
 		return true;
 	}
@@ -50,8 +53,8 @@ public class GameState {
 	public boolean whether_reverse(int x, int y) {
 		int dir[][] = {
 				{-1, -1}, {0, -1}, {1, -1},
-				{-1, 0},			{1, 0},
-				{-1, 1}, {0, 1}, {1, 1}
+				{-1,  0},		   {1,  0},
+				{-1,  1}, {0,  1}, {1,  1}
 		};
 		
 		for(int i = 0; i < 8; i++) {
