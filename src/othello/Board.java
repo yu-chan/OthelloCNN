@@ -73,16 +73,29 @@ public class Board extends JPanel implements MouseListener, Observer {
 		
 		
 		if(state.turn % 2 != 0) { //自分のターン
-			System.out.println("自分のターン");
+//			System.out.println("自分のターン");
+			System.out.println("黒のターン");
 			if(state.whether_put(x,  y, BLACK)) {
 				state.turn++;
 				state.data[x][y] = BLACK;
-				System.out.println("playerは押せた");
+//				System.out.println("playerは押せた");
+				System.out.println("黒は押せた");
 			} else {
-				System.out.println("playerは押せなかった");
+//				System.out.println("playerは押せなかった");
+				System.out.println("黒は押せなかった");
 			}
 		} else if(state.turn % 2 == 0) { //CPUのターン
-			System.out.println("CPUのターン");
+//			System.out.println("CPUのターン");
+			System.out.println("白のターン");
+			if(state.whether_put(x,  y, WHITE)) {
+				state.turn++;
+				state.data[x][y] = WHITE;
+//				System.out.println("playerは押せた");
+				System.out.println("白は押せた");
+			} else {
+//				System.out.println("playerは押せなかった");
+				System.out.println("白は押せなかった");
+			}
 //			state.turn++;
 //			cpu.put(state);
 		}

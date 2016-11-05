@@ -37,7 +37,7 @@ public class GameState {
 		
 		
 		//逆にできないなら、置けない
-		if(whether_reverse(x, y) == false) {
+		if(whether_reverse(x, y, color) == false) {
 			System.out.println("逆にできない");
 			return false;
 		}
@@ -50,12 +50,14 @@ public class GameState {
 	}
 	
 	//リバースできるか
-	public boolean whether_reverse(int x, int y) {
+	public boolean whether_reverse(int x, int y, int color) {
 		int dir[][] = {
 				{-1, -1}, {0, -1}, {1, -1},
 				{-1,  0},		   {1,  0},
 				{-1,  1}, {0,  1}, {1,  1}
 		};
+		
+		boolean reverse = false;
 		
 		for(int i = 0; i < 8; i++) {
 			//隣のマス
@@ -69,7 +71,8 @@ public class GameState {
 			}
 			
 			int nextState = data[x0][y0];
-			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
+//			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
+			if(nextState == color) {
 				System.out.println("隣は黒 : " + i);
 				continue;
 			} else if(nextState == 0) {//何もないなら、飛ばす
@@ -77,7 +80,7 @@ public class GameState {
 				continue;
 			}
 			
-			//隣のマスから走査して、黒があればリバースする
+			//隣のマスから走査して、colorがあればリバースする
 			int j = 2;
 			while(true) {
 				int x1 = x + dir[i][0] * j;
@@ -88,13 +91,15 @@ public class GameState {
 				}
 				
 				//自分の駒があれば、リバースする
-				if(data[x1][y1] == 1) {
+				if(data[x1][y1] == color) {
 					for(int k = 1; k < j; k++) {
 						int x2 = x + dir[i][0] * k;
 						int y2 = y + dir[i][1] * k;
-						data[x2][y2] = 1;
+//						data[x2][y2] = 1;
+						data[x2][y2] = color;
 					}
-					return true;
+					reverse = true;
+//					return true;
 //					break;
 				}
 				
@@ -108,7 +113,8 @@ public class GameState {
 			
 		}
 		
-		return false;
+//		return false;
+		return reverse;
 	}
 	
 	public boolean isOut(int x, int y) {
@@ -131,9 +137,10 @@ public class GameState {
 				}
 				
 				//リバースできるなら、パスしない
-				if(whether_reverse(x, y) == true) {
+				/*
+				if(whether_reverse(x, y, 1) == true) {
 					return false;
-				}
+				}*/
 			}
 		}
 		
