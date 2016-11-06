@@ -24,9 +24,19 @@ public class CPU {
 				}
 				
 				//置けるので、array_putに加える
+				if(state.whether_put(x, y, color, false)) {
+					int pos[] = {x, y};
+					array_put.add(pos);
+				}
 			}
 		}
 		
 		//ランダムに決める
+		Random rnd = new Random();
+		int index = rnd.nextInt(array_put.size());
+		
+		//その位置にコマを置く
+		int[] pos = array_put.get(index);
+		state.data[pos[0]][pos[1]] = color;
 	}
 }
