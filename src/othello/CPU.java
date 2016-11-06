@@ -24,7 +24,7 @@ public class CPU {
 				}
 				
 				//置けるので、array_putに加える
-				if(state.whether_put(x, y, color, false)) {
+				if(state.whether_reverse(x, y, color, false)) {
 					int pos[] = {x, y};
 					array_put.add(pos);
 				}
@@ -37,6 +37,7 @@ public class CPU {
 		
 		//その位置にコマを置く
 		int[] pos = array_put.get(index);
-		state.data[pos[0]][pos[1]] = color;
+//		state.data[pos[0]][pos[1]] = color;
+		state.whether_put(pos[0], pos[1], color, true);
 	}
 }
