@@ -43,8 +43,8 @@ public class GameState {
 		}
 		
 		//‹î‚ð’u‚­
-//		data[x][y] = color;
-//		turn++;
+		data[x][y] = color;
+		turn++;
 		
 		return true;
 	}

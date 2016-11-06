@@ -78,8 +78,8 @@ public class Board extends JPanel implements MouseListener, Observer {
 //			System.out.println("自分のターン");
 			System.out.println("黒のターン");
 			if(state.whether_put(x,  y, BLACK, true)) {
-				state.turn++;
-				state.data[x][y] = BLACK;
+//				state.turn++;
+//				state.data[x][y] = BLACK;
 //				System.out.println("playerは押せた");
 				System.out.println("黒は押せた");
 			} else {
@@ -90,8 +90,8 @@ public class Board extends JPanel implements MouseListener, Observer {
 //			System.out.println("CPUのターン");
 			System.out.println("白のターン");
 			if(state.whether_put(x,  y, WHITE, true)) {
-				state.turn++;
-				state.data[x][y] = WHITE;
+//				state.turn++;
+//				state.data[x][y] = WHITE;
 //				System.out.println("playerは押せた");
 				System.out.println("白は押せた");
 			} else {
