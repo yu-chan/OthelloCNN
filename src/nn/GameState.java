@@ -27,7 +27,7 @@ public class GameState {
 //	}
 	
 	//置けるかどうか
-	public boolean whether_put(int x, int y, int color) {
+	public boolean whether_put(int x, int y, int color, boolean doReverse) {
 		
 		//駒があるなら、置けない
 		if(data[x][y] != 0) {
@@ -37,7 +37,7 @@ public class GameState {
 		
 		
 		//逆にできないなら、置けない
-		if(whether_reverse(x, y, color) == false) {
+		if(whether_reverse(x, y, color, doReverse) == false) {
 			System.out.println("逆にできない");
 			return false;
 		}
@@ -50,7 +50,7 @@ public class GameState {
 	}
 	
 	//リバースできるか
-	public boolean whether_reverse(int x, int y, int color) {
+	public boolean whether_reverse(int x, int y, int color, boolean doReverse) {
 		int dir[][] = {
 				{-1, -1}, {0, -1}, {1, -1},
 				{-1,  0},		   {1,  0},
@@ -73,7 +73,12 @@ public class GameState {
 			int nextState = data[x0][y0];
 //			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
 			if(nextState == color) {
-				System.out.println("隣は黒 : " + i);
+				if(color == 1) {
+					System.out.println("隣は黒 : " + i);
+				} else if(color == -1) {
+					System.out.println("隣は白 : " + i);
+				}
+				
 				continue;
 			} else if(nextState == 0) {//何もないなら、飛ばす
 				System.out.println("隣には何もなし : " + i);
@@ -85,27 +90,30 @@ public class GameState {
 			while(true) {
 				int x1 = x + dir[i][0] * j;
 				int y1 = y + dir[i][1] * j;
+				
 				if(isOut(x1, y1) == true) {
 					System.out.println("ボード外2 : " + i);
 					break;
 				}
 				
+				//走査しているマスが何もないなら、飛ばす
+				if(data[x1][y1] == 0) {
+					break;
+				}
+				
 				//自分の駒があれば、リバースする
 				if(data[x1][y1] == color) {
-					for(int k = 1; k < j; k++) {
-						int x2 = x + dir[i][0] * k;
-						int y2 = y + dir[i][1] * k;
-//						data[x2][y2] = 1;
-						data[x2][y2] = color;
+					if(doReverse) {
+						for(int k = 1; k < j; k++) {
+							int x2 = x + dir[i][0] * k;
+							int y2 = y + dir[i][1] * k;
+//							data[x2][y2] = 1;
+							data[x2][y2] = color;
+						}
 					}
 					reverse = true;
 //					return true;
 //					break;
-				}
-				
-				//走査しているマスが何もないなら、飛ばす
-				if(data[x1][y1] == 0) {
-					break;
 				}
 				
 				j++;
