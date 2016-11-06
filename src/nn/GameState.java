@@ -4,8 +4,8 @@ public class GameState {
 	public int data[][];
 	public int turn;
 	int player;
-	int black;
-	int white;
+	public int black;
+	public int white;
 	
 	public GameState(int mas) {
 		data = new int[mas][mas];

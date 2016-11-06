@@ -69,6 +69,8 @@ public class Board extends JPanel implements MouseListener, Observer {
 		
 		if(state.turn > TURN) {
 			System.out.println("ƒIƒZƒ‚ÍI—¹‚µ‚Ü‚µ‚½");
+			state.countPiece();
+			System.out.println("• : " + state.black + " ”’ : " + state.white);
 		}
 		
 		
