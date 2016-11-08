@@ -72,7 +72,7 @@ public class GameState {
 			
 			int nextState = data[x0][y0];
 //			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
-			if(nextState == color) {
+			if(nextState == color) {//隣の駒が置いた駒と同じなら、飛ばす
 				if(color == 1) {
 					System.out.println("隣は黒 : " + i);
 				} else if(color == -1) {
