@@ -35,6 +35,12 @@ public class CPU {
 			}
 		}
 		
+		//array_putに一つもデータが格納されていないなら、パスする
+		if(array_put.size() == 0) {
+			state.incrementTurn();
+			return;
+		}
+		
 		//ランダムに決める
 		Random rnd = new Random();
 		int index = rnd.nextInt(array_put.size());

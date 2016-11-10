@@ -145,14 +145,14 @@ public class GameState {
 				}
 				
 				//リバースできるなら、パスしない
-				/*
-				if(whether_reverse(x, y, 1) == true) {
+				if(whether_reverse(x, y, 1, false) == true) {
 					return false;
-				}*/
+				}
 			}
 		}
 		
 		//パスする
+		turn++;
 		return true;
 	}
 	
@@ -185,6 +185,10 @@ public class GameState {
 	
 	public int getTurn() {
 		return this.turn;
+	}
+	
+	public void incrementTurn() {
+		this.turn++;
 	}
 	
 	public int getBlack() {

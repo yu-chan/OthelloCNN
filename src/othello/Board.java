@@ -83,6 +83,11 @@ public class Board {
 			return;
 		}
 		
+		if(state.checkPass()) {
+			System.out.println("player‚Í’u‚¯‚Ü‚¹‚ñ");
+			return;
+		}
+		
 		System.out.println("player‚Ìƒ^[ƒ“");
 		
 		int x, y;
