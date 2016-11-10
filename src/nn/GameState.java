@@ -66,7 +66,7 @@ public class GameState {
 			
 			//隣のマスがボード外なら、飛ばす
 			if(isOut(x0, y0) == true) {
-				System.out.println("ボード外1 : " + i);
+//				System.out.println("ボード外1 : " + i);
 				continue;
 			}
 			
@@ -74,14 +74,14 @@ public class GameState {
 //			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
 			if(nextState == color) {//隣の駒が置いた駒と同じなら、飛ばす
 				if(color == 1) {
-					System.out.println("隣は黒 : " + i);
+//					System.out.println("隣は黒 : " + i);
 				} else if(color == -1) {
-					System.out.println("隣は白 : " + i);
+//					System.out.println("隣は白 : " + i);
 				}
 				
 				continue;
 			} else if(nextState == 0) {//何もないなら、飛ばす
-				System.out.println("隣には何もなし : " + i);
+//				System.out.println("隣には何もなし : " + i);
 				continue;
 			}
 			
@@ -92,7 +92,7 @@ public class GameState {
 				int y1 = y + dir[i][1] * j;
 				
 				if(isOut(x1, y1) == true) {
-					System.out.println("ボード外2 : " + i);
+//					System.out.println("ボード外2 : " + i);
 					break;
 				}
 				

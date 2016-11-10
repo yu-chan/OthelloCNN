@@ -15,6 +15,9 @@ public class CPU {
 		if(state.getTurn() % 2 != 0) {
 			return;
 		}
+		
+		System.out.println("cpuのターン");
+		
 		//置ける場所を格納
 		ArrayList<int[]> array_put = new ArrayList<int[]>();
 		
@@ -37,6 +40,7 @@ public class CPU {
 		
 		//array_putに一つもデータが格納されていないなら、パスする
 		if(array_put.size() == 0) {
+			System.out.println("cpuは置けません");
 			state.incrementTurn();
 			return;
 		}
