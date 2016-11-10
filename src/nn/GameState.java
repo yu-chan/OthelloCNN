@@ -154,6 +154,15 @@ public class GameState {
 		}
 	}
 	
+	//データをコピー
+	public void copyData(int[][] copy) {
+		for(int i = 0; i < data.length; i++) {
+			for(int j = 0; j < data[i].length; j++) {
+				copy[i][j] = data[i][j];
+			}
+		}
+	}
+	
 	public void releaseData() {
 		data = null;
 	}
