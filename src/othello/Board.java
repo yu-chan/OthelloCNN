@@ -47,6 +47,7 @@ public class Board {
 		state = new GameState(MAS);
 		cpu = new CPU();
 		display();
+		put();
 	}
 	
 	public static void display() {
@@ -69,6 +70,10 @@ public class Board {
 			System.out.println();
 			suuti++;
 		}
+	}
+	
+	public static void put() {
+		
 	}
 	
 	/*public void update(Observable o, Object arg) {
