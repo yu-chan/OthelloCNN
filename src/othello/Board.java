@@ -1,6 +1,8 @@
 package othello;
 
 import nn.GameState;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
 /*import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
@@ -46,8 +48,12 @@ public class Board {
 	public static void main(String[] args) {
 		state = new GameState(MAS);
 		cpu = new CPU();
-		display();
-		put();
+		while(state.getTurn() <= 60) {
+			display();
+			put();
+			cpu.put(state, WHITE);
+		}
+		state.result();
 	}
 	
 	public static void display() {
@@ -73,7 +79,39 @@ public class Board {
 	}
 	
 	public static void put() {
+		if(state.getTurn() % 2 == 0) {
+			return;
+		}
 		
+		System.out.println("playerのターン");
+		
+		int x, y;
+		
+		//コンソールから入力
+		InputStreamReader input = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(input);
+		
+		try {
+			String buf = br.readLine();
+			String[] str = buf.split(" ", 0);
+			x = Integer.parseInt(str[0]);
+			y = Integer.parseInt(str[1]);
+		} catch(Exception e) {
+			x = -1;
+			y = -1;
+		}
+		
+		//入力した数字が適切でない
+		if(x < 0 || x >= MAS || y < 0 || y >= MAS) {
+			System.out.println("もう一度入力してください");
+			return;
+		}
+		
+		if(state.whether_put(x, y, BLACK, true)) {
+			System.out.println("playerは押せた");
+		} else {
+			System.out.println("playerは押せなかった");
+		}
 	}
 	
 	/*public void update(Observable o, Object arg) {

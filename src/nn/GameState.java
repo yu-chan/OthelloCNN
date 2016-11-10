@@ -4,8 +4,8 @@ public class GameState {
 	private int data[][];
 	private int turn;
 	int player;
-	public int black;
-	public int white;
+	private int black;
+	private int white;
 	
 	public GameState(int mas) {
 		data = new int[mas][mas];
@@ -172,11 +172,26 @@ public class GameState {
 		}
 	}
 	
+	public void result() {
+		System.out.println("ƒIƒZƒ‚ÍI—¹‚µ‚Ü‚µ‚½");
+		countPiece();
+		System.out.println("Œ‹‰Ê‚Í");
+		System.out.println("• : " + getBlack() + "”’ : " + getWhite());
+	}
+	
 	public int getData(int x, int y) {
 		return this.data[x][y];
 	}
 	
 	public int getTurn() {
 		return this.turn;
+	}
+	
+	public int getBlack() {
+		return this.black;
+	}
+	
+	public int getWhite() {
+		return this.white;
 	}
 }

@@ -11,6 +11,10 @@ public class CPU {
 	}
 	
 	public void put(GameState state, int color) {
+		//CPUのターンでないなら、待つ
+		if(state.getTurn() % 2 != 0) {
+			return;
+		}
 		//置ける場所を格納
 		ArrayList<int[]> array_put = new ArrayList<int[]>();
 		
