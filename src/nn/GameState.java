@@ -154,6 +154,10 @@ public class GameState {
 		}
 	}
 	
+	public void releaseData() {
+		data = null;
+	}
+	
 	public void result() {
 		System.out.println("ƒIƒZƒ‚ÍI—¹‚µ‚Ü‚µ‚½");
 		countPiece();

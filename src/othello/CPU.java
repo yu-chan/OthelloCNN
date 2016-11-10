@@ -52,5 +52,8 @@ public class CPU {
 		//その位置にコマを置く
 		int[] pos = array_put.get(index);
 		state.whether_put(pos[0], pos[1], color, true);
+		
+		//解放
+		array_put.clear();
 	}
 }

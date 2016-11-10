@@ -24,7 +24,9 @@ public class Board {
 			put();
 			cpu.put(state, WHITE);
 		}
+		display();
 		state.result();
+		state.releaseData();
 	}
 	
 	public static void display() {
