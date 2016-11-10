@@ -22,10 +22,6 @@ public class GameState {
 		white = 2;
 	}
 	
-	//リバースする
-//	public void reverse(int x, int y) {
-//	}
-	
 	//置けるかどうか
 	public boolean whether_put(int x, int y, int color, boolean doReverse) {
 		
@@ -66,22 +62,13 @@ public class GameState {
 			
 			//隣のマスがボード外なら、飛ばす
 			if(isOut(x0, y0) == true) {
-//				System.out.println("ボード外1 : " + i);
 				continue;
 			}
 			
 			int nextState = data[x0][y0];
-//			if(nextState == 1) {//隣なマスが黒(プレイヤー)なら、飛ばす
 			if(nextState == color) {//隣の駒が置いた駒と同じなら、飛ばす
-				if(color == 1) {
-//					System.out.println("隣は黒 : " + i);
-				} else if(color == -1) {
-//					System.out.println("隣は白 : " + i);
-				}
-				
 				continue;
 			} else if(nextState == 0) {//何もないなら、飛ばす
-//				System.out.println("隣には何もなし : " + i);
 				continue;
 			}
 			
@@ -92,7 +79,6 @@ public class GameState {
 				int y1 = y + dir[i][1] * j;
 				
 				if(isOut(x1, y1) == true) {
-//					System.out.println("ボード外2 : " + i);
 					break;
 				}
 				
@@ -107,13 +93,10 @@ public class GameState {
 						for(int k = 1; k < j; k++) {
 							int x2 = x + dir[i][0] * k;
 							int y2 = y + dir[i][1] * k;
-//							data[x2][y2] = 1;
 							data[x2][y2] = color;
 						}
 					}
 					reverse = true;
-//					return true;
-//					break;
 				}
 				
 				j++;
@@ -121,7 +104,6 @@ public class GameState {
 			
 		}
 		
-//		return false;
 		return reverse;
 	}
 	
