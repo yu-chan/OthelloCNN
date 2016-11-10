@@ -19,7 +19,7 @@ public class Board {
 	public static void main(String[] args) {
 		state = new GameState(MAS);
 		cpu = new CPU();
-		while(state.getTurn() <= 60) {
+		while(state.getTurn() <= TURN + 1) {
 			display();
 			put();
 			cpu.put(state, WHITE);
