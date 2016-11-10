@@ -1,8 +1,8 @@
 package nn;
 
 public class GameState {
-	public int data[][];
-	public int turn;
+	private int data[][];
+	private int turn;
 	int player;
 	public int black;
 	public int white;
@@ -170,5 +170,13 @@ public class GameState {
 				}
 			}
 		}
+	}
+	
+	public int getData(int x, int y) {
+		return this.data[x][y];
+	}
+	
+	public int getTurn() {
+		return this.turn;
 	}
 }
