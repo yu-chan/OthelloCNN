@@ -22,6 +22,7 @@ public class Board {
 		while(state.getTurn() <= TURN + 1) {
 			display();
 			put();
+			display();
 			cpu.put(state, WHITE);
 		}
 		display();
