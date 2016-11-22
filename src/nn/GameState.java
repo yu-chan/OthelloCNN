@@ -109,6 +109,7 @@ public class GameState {
 						}
 					}
 					reverse = true;
+					break;
 				}
 				
 				j++;
