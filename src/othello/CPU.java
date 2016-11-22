@@ -5,9 +5,11 @@ import nn.GameState;
 
 public class CPU {
 	int color;//白
+	Random rnd;
 	
 	public CPU() {
 		color = 2;
+		rnd = new Random();
 	}
 	
 	public void put(GameState state, int color) {
@@ -46,7 +48,7 @@ public class CPU {
 		}
 		
 		//ランダムに決める
-		Random rnd = new Random();
+//		Random rnd = new Random();
 		int index = rnd.nextInt(array_put.size());
 		
 		//その位置にコマを置く
