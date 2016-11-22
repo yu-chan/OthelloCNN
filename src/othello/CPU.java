@@ -2,6 +2,7 @@ package othello;
 
 import java.util.*;
 import nn.GameState;
+import nn.CNN;
 
 public class CPU {
 	int color;//”’
