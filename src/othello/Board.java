@@ -6,6 +6,7 @@ import java.io.BufferedReader;
 
 public class Board {
 	static GameState state;
+	static Player player;
 	static CPU cpu;
 	
 	static final int EMPTY = 0;
@@ -20,6 +21,7 @@ public class Board {
 	
 	public static void main(String[] args) {
 		state = new GameState(MAS);
+		player = new Player();
 		cpu = new CPU();
 		while(state.getTurn() <= TURN + 1) {
 			display();
