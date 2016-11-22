@@ -7,7 +7,7 @@ public class CPU {
 	int color;//”’
 	
 	public CPU() {
-		color = -1;
+		color = 2;
 	}
 	
 	public void put(GameState state, int color) {

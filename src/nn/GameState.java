@@ -12,8 +12,8 @@ public class GameState {
 		
 		//•:1 ”’:-1 ‚È‚µ:0
 		data[3][3] = 1;
-		data[3][4] = -1;
-		data[4][3] = -1;
+		data[3][4] = 2;
+		data[4][3] = 2;
 		data[4][4] = 1;
 		
 		turn = 1;
@@ -147,7 +147,7 @@ public class GameState {
 			for(int y = 0; y < 8; y++) {
 				if(data[x][y] == 1) {
 					black++;
-				} else if(data[x][y] == -1) {
+				} else if(data[x][y] == 2) {
 					white++;
 				}
 			}

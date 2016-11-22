@@ -8,13 +8,15 @@ public class Board {
 	static GameState state;
 	static CPU cpu;
 	
+	static final int EMPTY = 0;
 	static final int BLACK = 1;
-	static final int WHITE = -1;
+	static final int WHITE = 2;
 	static final int TURN = 60;
 	static final int MAS = 8;
-	static final char BLACK_PIECE = '●';
-	static final char WHITE_PIECE = '○';
-	static final char EMPTY = '・';
+	static final char[] PIECE = {'・', '●', '○'};
+//	static final char BLACK_PIECE = '●';
+//	static final char WHITE_PIECE = '○';
+//	static final char EMPTY_PIECE = '・';
 	
 	public static void main(String[] args) {
 		state = new GameState(MAS);
@@ -31,24 +33,25 @@ public class Board {
 	}
 	
 	public static void display() {
-		char suuti = '０';
+//		char suuti = '０';
 		//マスの位置
 		System.out.println("　０　１　２　３　４　５　６　７");
 		
 		//駒を表示
 		for(int x = 0; x < MAS; x++) {
-			System.out.print(suuti);
+			System.out.print((char)('０' + x));
 			for(int y = 0; y < MAS; y++) {
-				if(state.getData(x, y) == BLACK) {
+				System.out.print(PIECE[state.getData(x, y)] + "　");
+				/*if(state.getData(x, y) == BLACK) {
 					System.out.print(" " + BLACK_PIECE + "　");
 				} else if(state.getData(x, y) == WHITE) {
 					System.out.print(" " + WHITE_PIECE + "　");
 				} else {
-					System.out.print(" " + EMPTY + "　");
-				}
+					System.out.print(" " + EMPTY_PIECE + "　");
+				}*/
 			}
 			System.out.println();
-			suuti++;
+//			suuti++;
 		}
 	}
 	
