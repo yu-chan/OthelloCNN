@@ -23,11 +23,19 @@ public class Board {
 		state = new GameState(MAS);
 		player = new Player();
 		cpu = new CPU();
-		while(state.getTurn() <= TURN + 1) {
+		/*while(state.getTurn() <= TURN + 1) {
 			display();
 			put();
 			display();
 			cpu.put(state, WHITE);
+		}*/
+		while(whether_put() || cpu.whether_put(state)) {
+			display();
+			put();
+			state.countPiece();
+			display();
+			cpu.put(state, WHITE);
+			state.countPiece();
 		}
 		display();
 		state.result();
@@ -55,6 +63,18 @@ public class Board {
 			System.out.println();
 //			suuti++;
 		}
+	}
+	
+	public static boolean whether_put() {
+//		boolean player = false, cpu = false;
+		for(int x = 0; x < MAS; x++) {
+			for(int y = 0; y < MAS; y++) {
+				if(state.whether_put(x, y, BLACK, false)) {
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 	
 	public static void put() {

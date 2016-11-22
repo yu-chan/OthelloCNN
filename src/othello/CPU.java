@@ -12,6 +12,17 @@ public class CPU {
 		rnd = new Random();
 	}
 	
+	public boolean whether_put(GameState state) {
+		for(int x = 0; x < 8; x++) {
+			for(int y = 0; y < 8; y++) {
+				if(state.whether_put(x, y, color, false)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	public void put(GameState state, int color) {
 		//CPU‚Ìƒ^[ƒ“‚Å‚È‚¢‚È‚çA‘Ò‚Â
 		if(state.getTurn() % 2 != 0) {

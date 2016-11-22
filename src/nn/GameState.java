@@ -22,25 +22,37 @@ public class GameState {
 		white = 2;
 	}
 	
-	//置けるかどうか
+	//プレイヤーとCPU、どちらも置けるかどうか
+	public boolean whether_put() {
+		for(int x = 0; x < 8; x++) {
+			for(int y = 0; y < 8; y++) {
+				
+			}
+		}
+		return false;
+	}
+	
+	//x、yの位置に置けるかどうか
 	public boolean whether_put(int x, int y, int color, boolean doReverse) {
 		
 		//駒があるなら、置けない
 		if(data[x][y] != 0) {
-			System.out.println("駒があるから、置けない");
+//			System.out.println("駒があるから、置けない");
 			return false;
 		}
 		
 		
 		//逆にできないなら、置けない
 		if(whether_reverse(x, y, color, doReverse) == false) {
-			System.out.println("逆にできない");
+//			System.out.println("逆にできない");
 			return false;
 		}
 		
 		//駒を置く
-		data[x][y] = color;
-		turn++;
+		if(doReverse) {
+			data[x][y] = color;
+			turn++;
+		}
 		
 		return true;
 	}
