@@ -116,3 +116,4 @@ GUIを実装する
 - [Javaで画像処理（畳込み演算）を行う方法について](http://criticalbreak5.seesaa.net/article/420081386.html)
 - [コンボリューションを用いた画像の平滑化、僭越かとエッジ検出](https://codezine.jp/article/detail/129)
 - [5.8 イメージの処理と拡張](https://docs.oracle.com/javase/jp/1.4/guide/2d/spec/j2d-image.fm8.html)
+- [4. 畳み込み演算による画像処理](http://www.clg.niigata-u.ac.jp/~medimg/practice_medical_imaging/imgproc_scion/4filter/index.htm)
