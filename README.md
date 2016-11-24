@@ -110,3 +110,7 @@ GUIを実装する
 - [オセロプログラムの作り方](http://hp.vector.co.jp/authors/VA015468/platina/algo/)
 - [オセロプログラムを作ってみた](http://d.hatena.ne.jp/poor_code/20090711/1247269299)
 - [リバーシプログラムの作り方](http://www.es-cube.net/es-cube/reversi/sample/)
+- [Javaで始める画像処理-フィルタを掛ける](http://nodamushi.hatenablog.com/entry/20120810/1344803015)
+- [クラスConvolveOp](https://docs.oracle.com/javase/jp/6/api/java/awt/image/ConvolveOp.html)
+- [Javaでマッピング・フィルタリング・畳み込み](http://fits.hatenablog.com/entry/20121027/1351353844)
+- [Javaで画像処理（畳込み演算）を行う方法について](http://criticalbreak5.seesaa.net/article/420081386.html)
