@@ -114,3 +114,5 @@ GUIを実装する
 - [クラスConvolveOp](https://docs.oracle.com/javase/jp/6/api/java/awt/image/ConvolveOp.html)
 - [Javaでマッピング・フィルタリング・畳み込み](http://fits.hatenablog.com/entry/20121027/1351353844)
 - [Javaで画像処理（畳込み演算）を行う方法について](http://criticalbreak5.seesaa.net/article/420081386.html)
+- [コンボリューションを用いた画像の平滑化、僭越かとエッジ検出](https://codezine.jp/article/detail/129)
+- [5.8 イメージの処理と拡張](https://docs.oracle.com/javase/jp/1.4/guide/2d/spec/j2d-image.fm8.html)
