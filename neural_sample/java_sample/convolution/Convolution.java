@@ -23,13 +23,13 @@ public class Convolution {
 		int w = readImage.getWidth();
 		int h = readImage.getHeight();
 
-		BufferedImage writeImage, writeImage2;
+		BufferedImage writeImage;
+		// BufferedImage writeImage2;
 		boolean writeResult;
 		
 		try {
-			//width and height add 2
-			writeImage = new BufferedImage(w + 2, h + 2, BufferedImage.TYPE_INT_RGB);
-			writeImage2 = new BufferedImage(w + 2, h + 2, BufferedImage.TYPE_INT_RGB);
+			writeImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+			// writeImage2 = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 			// writeImage = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 			// writeResult = ImageIO.write(writeImage, "jpg", new File("result.jpg"));
 			// writeResult = ImageIO.write(writeImage, "jpg", readImage);
@@ -38,36 +38,39 @@ public class Convolution {
 			return;
 		}
 
-		//first, ready image that out add 2
-		for(int y = 0; y < h + 2; y++) {
-			for(int x = 0; x < w + 2; x++) {
-				if(y == 0 || y == h + 1 || x == 0 || x == w + 1) {
-					writeImage.setRGB(x, y, 0);
-				} else {
-					int c = readImage.getRGB(x - 1, y - 1);
-					writeImage.setRGB(x - 1, y - 1, c);
-				}
-				/*int c = readImage.getRGB(x, y);
-				int r = 255 - r(c);
-				int g = 255 - g(c);
-				int b = 255 - b(c);
-				int rgb = rgb(r, g, b);
-				writeImage.setRGB(x, y, rgb);*/
-			}
-		}
+		// for(int y = 0; y < h; y++) {
+		// 	for(int x = 0; x < w + 2; x++) {
+		// 		if(y == 0 || y == h + 1 || x == 0 || x == w + 1) {
+		// 			writeImage.setRGB(x, y, 0);
+		// 		} else {
+		// 			int c = readImage.getRGB(x - 1, y - 1);
+		// 			writeImage.setRGB(x - 1, y - 1, c);
+		// 		}
+		// 		/*int c = readImage.getRGB(x, y);
+		// 		int r = 255 - r(c);
+		// 		int g = 255 - g(c);
+		// 		int b = 255 - b(c);
+		// 		int rgb = rgb(r, g, b);
+		// 		writeImage.setRGB(x, y, rgb);*/
+		// 	}
+		// }
 
 		//convolution
-		for(int y = 1; y < h + 1; y++) {
-			for(int x = 1; x < w + 1; x++) {
-				float wa = writeImage.getRGB(x - 1, y - 1) * cMat[0][0] + writeImage.getRGB(x, y - 1) * cMat[0][1] + writeImage.getRGB(x + 1, y - 1) * cMat[0][2] +
+		for(int y = 1; y < h - 1; y++) {
+			for(int x = 1; x < w - 1; x++) {
+				/*float wa = writeImage.getRGB(x - 1, y - 1) * cMat[0][0] + writeImage.getRGB(x, y - 1) * cMat[0][1] + writeImage.getRGB(x + 1, y - 1) * cMat[0][2] +
 						   writeImage.getRGB(x - 1, y    ) * cMat[1][0] + writeImage.getRGB(x, y    ) * cMat[1][1] + writeImage.getRGB(x + 1, y    ) * cMat[1][2] +
 						   writeImage.getRGB(x - 1, y + 1) * cMat[2][0] + writeImage.getRGB(x, y + 1) * cMat[2][1] + writeImage.getRGB(x + 1, y + 1) * cMat[2][2];
-				writeImage2.setRGB(x, y, (int)wa);
+				writeImage2.setRGB(x, y, (int)wa);*/
+				float wa = readImage.getRGB(x - 1, y - 1) * cMat[0][0] + readImage.getRGB(x, y - 1) * cMat[0][1] + readImage.getRGB(x + 1, y - 1) * cMat[0][2] +
+						   readImage.getRGB(x - 1, y    ) * cMat[1][0] + readImage.getRGB(x, y    ) * cMat[1][1] + readImage.getRGB(x + 1, y    ) * cMat[1][2] +
+						   readImage.getRGB(x - 1, y + 1) * cMat[2][0] + readImage.getRGB(x, y + 1) * cMat[2][1] + readImage.getRGB(x + 1, y + 1) * cMat[2][2];
+				writeImage.setRGB(x, y, (int)wa);
 			}
 		}
 
 		//original big
-		BufferedImage writeImage3;
+		/*BufferedImage writeImage3;
 		try {
 			writeImage3 = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
 		} catch(Exception e) {
@@ -77,10 +80,10 @@ public class Convolution {
 			for(int x = 1; x < w + 1; x++) {
 				writeImage3.setRGB(x - 1, y - 1, writeImage2.getRGB(x, y));
 			}
-		}
+		}*/
 
 		try {
-			writeResult = ImageIO.write(writeImage3, "jpg", new File("result2.jpg"));
+			writeResult = ImageIO.write(writeImage, "jpg", new File("result3.jpg"));
 		} catch (Exception e) {
 		}
 
