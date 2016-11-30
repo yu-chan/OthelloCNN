@@ -10,19 +10,19 @@ public class GameState {
 	public GameState(int mas) {
 		data = new int[mas][mas];
 		
-		//•:1 ”’:-1 ‚È‚µ:0
+		//é»’ï¼š1 ç™½:2 ãªã—ï¼š0
 		data[3][3] = 1;
 		data[3][4] = 2;
 		data[4][3] = 2;
 		data[4][4] = 1;
 		
 		turn = 1;
-		player = 1;//0:CPU 1:ƒvƒŒƒCƒ„[
+		player = 1;//0:CPU 1:ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼
 		black = 2;
 		white = 2;
 	}
 	
-	//ƒvƒŒƒCƒ„[‚ÆCPUA‚Ç‚¿‚ç‚à’u‚¯‚é‚©‚Ç‚¤‚©
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨CPUã€ã©ã¡ã‚‰ã‚‚ç½®ã‘ã‚‹ã‹ã©ã†ã‹
 	public boolean whether_put() {
 		for(int x = 0; x < 8; x++) {
 			for(int y = 0; y < 8; y++) {
@@ -32,23 +32,23 @@ public class GameState {
 		return false;
 	}
 	
-	//xAy‚ÌˆÊ’u‚É’u‚¯‚é‚©‚Ç‚¤‚©
+	//xã€yã®ä½ç½®ã«ç½®ã‘ã‚‹ã‹ã©ã†ã‹
 	public boolean whether_put(int x, int y, int color, boolean doReverse) {
 		
-		//‹î‚ª‚ ‚é‚È‚çA’u‚¯‚È‚¢
+		//é§’ãŒã‚ã‚‹ãªã‚‰ã€ç½®ã‘ãªã„
 		if(data[x][y] != 0) {
-//			System.out.println("‹î‚ª‚ ‚é‚©‚çA’u‚¯‚È‚¢");
+//			System.out.println("é§’ãŒã‚ã‚‹ã‹ã‚‰ã€ç½®ã‘ãªã„");
 			return false;
 		}
 		
 		
-		//‹t‚É‚Å‚«‚È‚¢‚È‚çA’u‚¯‚È‚¢
+		//é€†ã«ã§ããªã„ãªã‚‰ã€ç½®ã‘ãªã„
 		if(whether_reverse(x, y, color, doReverse) == false) {
-//			System.out.println("‹t‚É‚Å‚«‚È‚¢");
+//			System.out.println("é€†ã«ã§ããªã„");
 			return false;
 		}
 		
-		//‹î‚ğ’u‚­
+		//é§’ã‚’ç½®ã
 		if(doReverse) {
 			data[x][y] = color;
 			turn++;
@@ -57,7 +57,7 @@ public class GameState {
 		return true;
 	}
 	
-	//ƒŠƒo[ƒX‚Å‚«‚é‚©
+	//ãƒªãƒãƒ¼ã‚¹ã§ãã‚‹ã‹
 	public boolean whether_reverse(int x, int y, int color, boolean doReverse) {
 		int dir[][] = {
 				{-1, -1}, {0, -1}, {1, -1},
@@ -68,23 +68,23 @@ public class GameState {
 		boolean reverse = false;
 		
 		for(int i = 0; i < 8; i++) {
-			//—×‚Ìƒ}ƒX
+			//éš£ã®ãƒã‚¹
 			int x0 = x + dir[i][0];
 			int y0 = y + dir[i][1];
 			
-			//—×‚Ìƒ}ƒX‚ªƒ{[ƒhŠO‚È‚çA”ò‚Î‚·
+			//éš£ã®ãƒã‚¹ãŒãƒœãƒ¼ãƒ‰å¤–ãªã‚‰ã€é£›ã°ã™
 			if(isOut(x0, y0) == true) {
 				continue;
 			}
 			
 			int nextState = data[x0][y0];
-			if(nextState == color) {//—×‚Ì‹î‚ª’u‚¢‚½‹î‚Æ“¯‚¶‚È‚çA”ò‚Î‚·
+			if(nextState == color) {//éš£ã®é§’ãŒç½®ã„ãŸé§’ã¨åŒã˜ãªã‚‰ã€é£›ã°ã™
 				continue;
-			} else if(nextState == 0) {//‰½‚à‚È‚¢‚È‚çA”ò‚Î‚·
+			} else if(nextState == 0) {//ä½•ã‚‚ãªã„ãªã‚‰ã€é£›ã°ã™
 				continue;
 			}
 			
-			//—×‚Ìƒ}ƒX‚©‚ç‘–¸‚µ‚ÄAcolor‚ª‚ ‚ê‚ÎƒŠƒo[ƒX‚·‚é
+			//éš£ã®ãƒã‚¹ã‹ã‚‰èµ°æŸ»ã—ã¦ã€ colorãŒã‚ã‚Œã°ãƒªãƒãƒ¼ã‚¹ã™ã‚‹
 			int j = 2;
 			while(true) {
 				int x1 = x + dir[i][0] * j;
@@ -94,12 +94,12 @@ public class GameState {
 					break;
 				}
 				
-				//‘–¸‚µ‚Ä‚¢‚éƒ}ƒX‚ª‰½‚à‚È‚¢‚È‚çA”ò‚Î‚·
+				//èµ°æŸ»ã—ã¦ã„ã‚‹ãƒã‚¹ãŒä½•ã‚‚ãªã„ãªã‚‰ã€é£›ã°ã™
 				if(data[x1][y1] == 0) {
 					break;
 				}
 				
-				//©•ª‚Ì‹î‚ª‚ ‚ê‚ÎAƒŠƒo[ƒX‚·‚é
+				//è‡ªåˆ†ã®é§’ãŒã‚ã‚Œã°ã€ãƒªãƒãƒ¼ã‚¹ã™ã‚‹
 				if(data[x1][y1] == color) {
 					if(doReverse) {
 						for(int k = 1; k < j; k++) {
@@ -127,31 +127,31 @@ public class GameState {
 		return false;
 	}
 	
-	//ƒpƒX‚ğƒ`ƒFƒbƒN‚·‚é
+	//ãƒ‘ã‚¹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 	public boolean checkPass() {
 		
-		//ƒ{[ƒh‚ğ‘–¸‚·‚é
+		//ãƒœãƒ¼ãƒ‰ã‚’èµ°æŸ»ã™ã‚‹
 		for(int x = 0; x < 8; x++) {
 			for(int y = 0; y < 8; y++) {
 				
-				//‹î‚ª‚ ‚é‚Æ‚±‚ë‚ÍA”ò‚Î‚·
+				//é§’ãŒã‚ã‚‹ã¨ã“ã‚ã¯ã€é£›ã°ã™
 				if(data[x][y] != 0) {
 					continue;
 				}
 				
-				//ƒŠƒo[ƒX‚Å‚«‚é‚È‚çAƒpƒX‚µ‚È‚¢
+				//ãƒªãƒãƒ¼ã‚¹ã§ãã‚‹ãªã‚‰ã€ãƒ‘ã‚¹ã—ãªã„
 				if(whether_reverse(x, y, 1, false) == true) {
 					return false;
 				}
 			}
 		}
 		
-		//ƒpƒX‚·‚é
+		//ãƒ‘ã‚¹ã™ã‚‹
 		turn++;
 		return true;
 	}
 	
-	//”’‚Æ•‚Ì‹î‚ğ”‚¦‚é
+	//ç™½ã¨é»’ã®é§’ã‚’æ•°ãˆã‚‹
 	public void countPiece() {
 		black = 0;
 		white = 0;
@@ -167,7 +167,7 @@ public class GameState {
 		}
 	}
 	
-	//ƒf[ƒ^‚ğƒRƒs[
+	//ãƒ‡ãƒ¼ã‚¿ã‚’ã‚³ãƒ”ãƒ¼
 	public void copyData(int[][] copy) {
 		copy = (int[][])data.clone();
 	}
@@ -177,10 +177,10 @@ public class GameState {
 	}
 	
 	public void result() {
-		System.out.println("ƒIƒZƒ‚ÍI—¹‚µ‚Ü‚µ‚½");
+		System.out.println("ã‚ªã‚»ãƒ­ã¯çµ‚äº†ã—ã¾ã—ãŸ");
 		countPiece();
-		System.out.println("Œ‹‰Ê‚Í");
-		System.out.println("• : " + getBlack() + "”’ : " + getWhite());
+		System.out.println("çµæœã¯");
+		System.out.println("é»’ã€€:ã€€" + getBlack() + "ç™½ã€€:ã€€" + getWhite());
 	}
 	
 	public int getData(int x, int y) {

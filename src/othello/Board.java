@@ -14,10 +14,10 @@ public class Board {
 	static final int WHITE = 2;
 	static final int TURN = 60;
 	static final int MAS = 8;
-	static final char[] PIECE = {'E', 'œ', '›'};
-//	static final char BLACK_PIECE = 'œ';
-//	static final char WHITE_PIECE = '›';
-//	static final char EMPTY_PIECE = 'E';
+	static final char[] PIECE = {'ãƒ»', 'â—', 'â—‹'};
+//	static final char BLACK_PIECE = 'â—';
+//	static final char WHITE_PIECE = 'â—‹';
+//	static final char EMPTY_PIECE = 'ãƒ»';
 	
 	public static void main(String[] args) {
 		state = new GameState(MAS);
@@ -43,21 +43,21 @@ public class Board {
 	}
 	
 	public static void display() {
-//		char suuti = '‚O';
-		//ƒ}ƒX‚ÌˆÊ’u
-		System.out.println("@‚O@‚P@‚Q@‚R@‚S@‚T@‚U@‚V");
+//		char suuti = 'ï¼';
+		//ãƒã‚¹ã®ä½ç½®
+		System.out.println("ã€€ï¼ã€€ï¼‘ã€€ï¼’ã€€ï¼“ã€€ï¼”ã€€ï¼•ã€€ï¼–ã€€ï¼—");
 		
-		//‹î‚ğ•\¦
+		//ï¿½ï¿½ï¿½\ï¿½ï¿½
 		for(int x = 0; x < MAS; x++) {
-			System.out.print((char)('‚O' + x));
+			System.out.print((char)('ï¼' + x));
 			for(int y = 0; y < MAS; y++) {
-				System.out.print(PIECE[state.getData(x, y)] + "@");
+				System.out.print(PIECE[state.getData(x, y)] + "ã€€");
 				/*if(state.getData(x, y) == BLACK) {
-					System.out.print(" " + BLACK_PIECE + "@");
+					System.out.print(" " + BLACK_PIECE + "ã€€");
 				} else if(state.getData(x, y) == WHITE) {
-					System.out.print(" " + WHITE_PIECE + "@");
+					System.out.print(" " + WHITE_PIECE + "ã€€");
 				} else {
-					System.out.print(" " + EMPTY_PIECE + "@");
+					System.out.print(" " + EMPTY_PIECE + "ã€€");
 				}*/
 			}
 			System.out.println();
@@ -83,15 +83,15 @@ public class Board {
 		}
 		
 		if(state.checkPass()) {
-			System.out.println("player‚Í’u‚¯‚Ü‚¹‚ñ");
+			System.out.println("playerã¯ç½®ã‘ã¾ã›ã‚“");
 			return;
 		}
 		
-		System.out.println("player‚Ìƒ^[ƒ“");
+		System.out.println("playerã®ã‚¿ãƒ¼ãƒ³");
 		
 		int x, y;
 		
-		//ƒRƒ“ƒ\[ƒ‹‚©‚ç“ü—Í
+		//ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ã‹ã‚‰å…¥åŠ›
 		InputStreamReader input = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(input);
 		
@@ -105,16 +105,16 @@ public class Board {
 			y = -1;
 		}
 		
-		//“ü—Í‚µ‚½”š‚ª“KØ‚Å‚È‚¢
+		//å…¥åŠ›ã—ãŸæ•°å­—ãŒé©åˆ‡ã§ãªã„
 		if(x < 0 || x >= MAS || y < 0 || y >= MAS) {
-			System.out.println("‚à‚¤ˆê“x“ü—Í‚µ‚Ä‚­‚¾‚³‚¢");
+			System.out.println("ã‚‚ã†ä¸€åº¦å…¥åŠ›ã—ã¦ãã ã•ã„");
 			return;
 		}
 		
 		if(state.whether_put(x, y, BLACK, true)) {
-			System.out.println("player‚Í‰Ÿ‚¹‚½");
+			System.out.println("playerã¯æŠ¼ã›ãŸ");
 		} else {
-			System.out.println("player‚Í‰Ÿ‚¹‚È‚©‚Á‚½");
+			System.out.println("playerã¯æŠ¼ã›ãªã‹ã£ãŸ");
 		}
 	}
 }

@@ -5,7 +5,7 @@ import nn.GameState;
 import nn.CNN;
 
 public class CPU {
-	int color;//”’
+	int color;//ç™½
 	Random rnd;
 	
 	public CPU() {
@@ -25,26 +25,26 @@ public class CPU {
 	}
 	
 	public void put(GameState state, int color) {
-		//CPU‚Ìƒ^[ƒ“‚Å‚È‚¢‚È‚çA‘Ò‚Â
+		//CPUã®ã‚¿ãƒ¼ãƒ³ã§ãªã„ã‹ã‚‰ã€å¾…ã¤
 		if(state.getTurn() % 2 != 0) {
 			return;
 		}
 		
-		System.out.println("cpu‚Ìƒ^[ƒ“");
+		System.out.println("cpuã®ã‚¿ãƒ¼ãƒ³");
 		
-		//’u‚¯‚éêŠ‚ğŠi”[
+		//ç½®ã‘ã‚‹å ´æ‰€ã‚’æ ¼ç´
 		ArrayList<int[]> array_put = new ArrayList<int[]>();
 		
-		//’u‚¯‚éêŠ‚ğ’T‚·
+		//ç½®ã‘ã‚‹å ´æ‰€ã‚’æ¢ã™
 		for(int x = 0; x < 8; x++) {
 			for(int y = 0; y < 8; y++) {
 				
-				//‹î‚ª‚ ‚é‚È‚çA”ò‚Î‚·
+				//é§’ãŒã‚ã‚‹ãªã‚‰ã€é£›ã°ã™
 				if(state.getData(x, y) != 0) {
 					continue;
 				}
 				
-				//’u‚¯‚é‚Ì‚ÅAarray_put‚É‰Á‚¦‚é
+				//ç½®ã‘ã‚‹ã®ã§ã€array_putã«åŠ ãˆã‚‹
 				if(state.whether_reverse(x, y, color, false)) {
 					int pos[] = {x, y};
 					array_put.add(pos);
@@ -52,22 +52,22 @@ public class CPU {
 			}
 		}
 		
-		//array_put‚Éˆê‚Â‚àƒf[ƒ^‚ªŠi”[‚³‚ê‚Ä‚¢‚È‚¢‚È‚çAƒpƒX‚·‚é
+		//array_putã«ä¸€ã¤ã‚‚ãƒ‡ãƒ¼ã‚¿ãŒéš ã•ã‚Œã¦ã„ãªã„ãªã‚‰ã€ãƒ‘ã‚¹ã™ã‚‹
 		if(array_put.size() == 0) {
-			System.out.println("cpu‚Í’u‚¯‚Ü‚¹‚ñ");
+			System.out.println("cpuã¯ç½®ã‘ã¾ã›ã‚“");
 			state.incrementTurn();
 			return;
 		}
 		
-		//ƒ‰ƒ“ƒ_ƒ€‚ÉŒˆ‚ß‚é
+		//ãƒ©ãƒ³ãƒ€ãƒ ã«æ±ºã‚ã‚‹
 //		Random rnd = new Random();
 		int index = rnd.nextInt(array_put.size());
 		
-		//‚»‚ÌˆÊ’u‚ÉƒRƒ}‚ğ’u‚­
+		//ãã®ä½ç½®ã«ã‚³ãƒã‚’ç½®ã
 		int[] pos = array_put.get(index);
 		state.whether_put(pos[0], pos[1], color, true);
 		
-		//‰ğ•ú
+		//è§£æ”¾
 		array_put.clear();
 	}
 }
