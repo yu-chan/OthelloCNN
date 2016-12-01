@@ -118,3 +118,8 @@ GUIを実装する
 - [5.8 イメージの処理と拡張](https://docs.oracle.com/javase/jp/1.4/guide/2d/spec/j2d-image.fm8.html)
 - [4. 畳み込み演算による画像処理](http://www.clg.niigata-u.ac.jp/~medimg/practice_medical_imaging/imgproc_scion/4filter/index.htm)
 - [深層畳み込みニューラルネットワークを用いた画像スケーリング](http://postd.cc/image-scaling-using-deep-convolutional-neural-networks-part1/)
+- [オセロの勝ち方・コツ](http://bassy84.net/othello.syosin.html)
+- [オセロで勝つ6のコツと意識するべきこと3つ。絶対勝ちたい人必見！](https://kaumo.jp/topic/46156)
+- [オセロ（リバーシ）の必勝法（勝ち方）～知っておきたい中盤から終盤～](http://uguisu.skr.jp/othello/3-2.html)
+- [オセロがたった1分で劇的に強くなるコツ](https://matome.naver.jp/odai/2133559389849491501)
+- [オセロ　勝ち方](http://mezasou.com/reversi/top27-0.html)
