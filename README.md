@@ -105,6 +105,7 @@ GUIを実装する
 - [C言語でのニューラルネットワークの実装](http://caramelpudding.hatenablog.com/entry/2016/03/09/131228)
 - [TDニューラルネットワークを用いたオセロの性能評価](http://www.cit.nihon-u.ac.jp/kouendata/No.41/7_sujo/7-039.pdf)
 - [Chainerで始めるニューラルネットワーク](http://qiita.com/icoxfog417/items/96ecaff323434c8d677b)
+- [高卒でもわかる機械学習 (2) 単純パーセプトロン | 頭の中に思い浮かべた ...](http://hokuts.com/2015/11/25/ml2_perceptron/)
 
 - [使える！ロジカルシンキング（6）卒論テーマはこう決める](http://college.nikkei.co.jp/article/55284410.html)
 - [卒業論文ってどこから始めればいいんでしょう...](http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1187715731)
