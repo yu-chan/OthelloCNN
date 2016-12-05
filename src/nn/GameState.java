@@ -2,6 +2,16 @@ package nn;
 
 public class GameState {
 	private int data[][];
+	private int priority[][] = {
+			{1, 5, 4, 4, 4, 4, 5, 1},
+			{5, 5, 3, 3, 3, 3, 5, 5},
+			{4, 3, 2, 2, 2, 2, 3, 4},
+			{4, 3, 2, 0, 0, 2, 3, 4},
+			{4, 3, 2, 0, 0, 2, 3, 4},
+			{4, 3, 2, 2, 2, 2, 3, 4},
+			{5, 5, 3, 3, 3, 3, 5, 5},
+			{1, 5, 4, 4, 4, 4, 5, 1}
+	};
 	private int turn;
 	int player;
 	private int black;
@@ -185,6 +195,10 @@ public class GameState {
 	
 	public int getData(int x, int y) {
 		return this.data[x][y];
+	}
+	
+	public int getPriority(int x, int y) {
+		return this.priority[x][y];
 	}
 	
 	public int getTurn() {
