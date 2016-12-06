@@ -216,3 +216,4 @@ GUIを実装する
 - [オセロ（リバーシ）の必勝法（勝ち方）～知っておきたい中盤から終盤～](http://uguisu.skr.jp/othello/3-2.html)
 - [オセロがたった1分で劇的に強くなるコツ](https://matome.naver.jp/odai/2133559389849491501)
 - [オセロ　勝ち方](http://mezasou.com/reversi/top27-0.html)
+- [オセロ入門編第１０回：ゼブラ先生・・・定石が打ちたいです・・・](http://ameblo.jp/kakoikakoi/entry-10915878758.html)
