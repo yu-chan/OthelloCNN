@@ -47,7 +47,7 @@ public class Board {
 		//マスの位置
 		System.out.println("　０　１　２　３　４　５　６　７");
 		
-		//���\��
+		//駒を表示
 		for(int x = 0; x < MAS; x++) {
 			System.out.print((char)('０' + x));
 			for(int y = 0; y < MAS; y++) {
