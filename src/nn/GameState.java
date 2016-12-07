@@ -34,8 +34,8 @@ public class GameState {
 	
 	//プレイヤーとCPU、どちらも置けるかどうか
 	public boolean whether_put() {
-		for(int x = 0; x < 8; x++) {
-			for(int y = 0; y < 8; y++) {
+		for(int y = 0; y < 8; y++) {
+			for(int x = 0; x < 8; x++) {
 				
 			}
 		}
@@ -46,7 +46,7 @@ public class GameState {
 	public boolean whether_put(int x, int y, int color, boolean doReverse) {
 		
 		//駒があるなら、置けない
-		if(data[x][y] != 0) {
+		if(data[y][x] != 0) {
 //			System.out.println("駒があるから、置けない");
 			return false;
 		}
@@ -60,7 +60,7 @@ public class GameState {
 		
 		//駒を置く
 		if(doReverse) {
-			data[x][y] = color;
+			data[y][x] = color;
 			turn++;
 		}
 		
@@ -87,7 +87,7 @@ public class GameState {
 				continue;
 			}
 			
-			int nextState = data[x0][y0];
+			int nextState = data[y0][x0];
 			if(nextState == color) {//隣の駒が置いた駒と同じなら、飛ばす
 				continue;
 			} else if(nextState == 0) {//何もないなら、飛ばす
@@ -105,17 +105,17 @@ public class GameState {
 				}
 				
 				//走査しているマスが何もないなら、飛ばす
-				if(data[x1][y1] == 0) {
+				if(data[y1][x1] == 0) {
 					break;
 				}
 				
 				//自分の駒があれば、リバースする
-				if(data[x1][y1] == color) {
+				if(data[y1][x1] == color) {
 					if(doReverse) {
 						for(int k = 1; k < j; k++) {
 							int x2 = x + dir[i][0] * k;
 							int y2 = y + dir[i][1] * k;
-							data[x2][y2] = color;
+							data[y2][x2] = color;
 						}
 					}
 					reverse = true;
@@ -141,11 +141,11 @@ public class GameState {
 	public boolean checkPass() {
 		
 		//ボードを走査する
-		for(int x = 0; x < 8; x++) {
-			for(int y = 0; y < 8; y++) {
+		for(int y = 0; y < 8; y++) {
+			for(int x = 0; x < 8; x++) {
 				
 				//駒があるところは、飛ばす
-				if(data[x][y] != 0) {
+				if(data[y][x] != 0) {
 					continue;
 				}
 				
@@ -166,11 +166,11 @@ public class GameState {
 		black = 0;
 		white = 0;
 		
-		for(int x = 0; x < 8; x++) {
-			for(int y = 0; y < 8; y++) {
-				if(data[x][y] == 1) {
+		for(int y = 0; y < 8; y++) {
+			for(int x = 0; x < 8; x++) {
+				if(data[y][x] == 1) {
 					black++;
-				} else if(data[x][y] == 2) {
+				} else if(data[y][x] == 2) {
 					white++;
 				}
 			}
@@ -194,11 +194,11 @@ public class GameState {
 	}
 	
 	public int getData(int x, int y) {
-		return this.data[x][y];
+		return this.data[y][x];
 	}
 	
 	public int getPriority(int x, int y) {
-		return this.priority[x][y];
+		return this.priority[y][x];
 	}
 	
 	public int getTurn() {

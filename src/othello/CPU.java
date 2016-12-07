@@ -14,8 +14,8 @@ public class CPU {
 	}
 	
 	public boolean whether_put(GameState state) {
-		for(int x = 0; x < 8; x++) {
-			for(int y = 0; y < 8; y++) {
+		for(int y = 0; y < 8; y++) {
+			for(int x = 0; x < 8; x++) {
 				if(state.whether_put(x, y, color, false)) {
 					return true;
 				}
@@ -36,8 +36,8 @@ public class CPU {
 		ArrayList<int[]> array_put = new ArrayList<int[]>();
 		
 		//置ける場所を探す
-		for(int x = 0; x < 8; x++) {
-			for(int y = 0; y < 8; y++) {
+		for(int y = 0; y < 8; y++) {
+			for(int x = 0; x < 8; x++) {
 				
 				//駒があるなら、飛ばす
 				if(state.getData(x, y) != 0) {

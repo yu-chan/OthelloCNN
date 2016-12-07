@@ -48,9 +48,9 @@ public class Board {
 		System.out.println("　０　１　２　３　４　５　６　７");
 		
 		//駒を表示
-		for(int x = 0; x < MAS; x++) {
-			System.out.print((char)('０' + x));
-			for(int y = 0; y < MAS; y++) {
+		for(int y = 0; y < MAS; y++) {
+			System.out.print((char)('０' + y));
+			for(int x = 0; x < MAS; x++) {
 				System.out.print(PIECE[state.getData(x, y)] + "　");
 				/*if(state.getData(x, y) == BLACK) {
 					System.out.print(" " + BLACK_PIECE + "　");
@@ -67,8 +67,8 @@ public class Board {
 	
 	public static boolean whether_put() {
 //		boolean player = false, cpu = false;
-		for(int x = 0; x < MAS; x++) {
-			for(int y = 0; y < MAS; y++) {
+		for(int y = 0; y < MAS; y++) {
+			for(int x = 0; x < MAS; x++) {
 				if(state.whether_put(x, y, BLACK, false)) {
 					return true;
 				}
