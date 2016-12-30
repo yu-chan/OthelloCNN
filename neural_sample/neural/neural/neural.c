@@ -25,6 +25,16 @@ int main(void) {
 	int ilearn, isample, i, j;
 	double net_input, epsilon;
 	int inet_input;
+	FILE *fp;
+	char *fname = "result.txt";
+	char *str;
+	int c;
+
+	fp = fopen(fname, "w");
+	if(fp == NULL) {
+		printf("ファイル開けないお\n");
+		return 0;
+	}
 
 	srand((unsigned)time(NULL));
 
@@ -102,6 +112,8 @@ int main(void) {
 
 				printf("ilearn = %d, ty[isample][j] = %d ", ilearn, ty[isample][j]);
 				printf("y > %lf (%d.%d)\n", y[j], tx[isample][0], tx[isample][1]);
+				// str = "ilearn = %d, ty[%d][%d] = %d y > %lf (%d.%d)\n";
+				fprintf(fp, "ilearn = %d, ty[%d][%d] = %d y > %lf (%d.%d)\n", ilearn, isample, j, ty[isample][j], y[j], tx[isample][0], tx[isample][1]);
 			}
 
 			//逆方向の動作
@@ -134,4 +146,9 @@ int main(void) {
 		}	 //訓練データのループ終わり
 
 	}	//学習データのループ終わり
+
+	fclose(fp);
+	printf("ファイルの書き込みが終了したお\n");
+
+	return 0;
 }
