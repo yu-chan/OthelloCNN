@@ -217,3 +217,10 @@ GUIを実装する
 - [オセロがたった1分で劇的に強くなるコツ](https://matome.naver.jp/odai/2133559389849491501)
 - [オセロ　勝ち方](http://mezasou.com/reversi/top27-0.html)
 - [オセロ入門編第１０回：ゼブラ先生・・・定石が打ちたいです・・・](http://ameblo.jp/kakoikakoi/entry-10915878758.html)
+- [強いオセロプログラムの内部動作](http://www.amy.hi-ho.ne.jp/okuhara/howtoj.htm)
+- [Thell](http://sealsoft.jp/thell/)
+- [参考文献](http://sealsoft.jp/thell/bibliography.html)
+- [Introduction](http://radagast.se/othello/)
+- [評価関数を考える](http://www.geocities.co.jp/SiliconValley-Bay/4543/Osero/Value/Value.html)
+- [オセロプログラムの評価関数の改善について](https://www.kankyo-u.ac.jp/f/845/1044.pdf)
+
