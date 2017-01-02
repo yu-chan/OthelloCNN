@@ -223,4 +223,5 @@ GUIを実装する
 - [Introduction](http://radagast.se/othello/)
 - [評価関数を考える](http://www.geocities.co.jp/SiliconValley-Bay/4543/Osero/Value/Value.html)
 - [オセロプログラムの評価関数の改善について](https://www.kankyo-u.ac.jp/f/845/1044.pdf)
+- [Chainer1.5.0をWindowsにインストールする](http://qiita.com/icoxfog417/items/ca1521f9d62183cea234)
 
