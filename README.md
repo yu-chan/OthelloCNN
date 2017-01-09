@@ -202,14 +202,14 @@ GUIを実装する
 - [5.8 イメージの処理と拡張](https://docs.oracle.com/javase/jp/1.4/guide/2d/spec/j2d-image.fm8.html)
 - [4. 畳み込み演算による画像処理](http://www.clg.niigata-u.ac.jp/~medimg/practice_medical_imaging/imgproc_scion/4filter/index.htm)
 - [深層畳み込みニューラルネットワークを用いた画像スケーリング](http://postd.cc/image-scaling-using-deep-convolutional-neural-networks-part1/)
--[opencv.jp - OpenCV-1.0:機械学習 ニューラルネットワーク（Neural ...](http://opencv.jp/opencv-1.0.0/document/opencvref_ml_nn.html)
+- [opencv.jp - OpenCV-1.0:機械学習 ニューラルネットワーク（Neural ...](http://opencv.jp/opencv-1.0.0/document/opencvref_ml_nn.html)
 
 - [オセロプログラムの作り方](http://hp.vector.co.jp/authors/VA015468/platina/algo/)
 - [オセロプログラムを作ってみた](http://d.hatena.ne.jp/poor_code/20090711/1247269299)
 - [リバーシプログラムの作り方](http://www.es-cube.net/es-cube/reversi/sample/)
 - [表計算ソフトでオセロゲームを作る方法](http://studio-rain.cocolog-nifty.com/blog/2011/11/post-ae77.html)
 - [オセロの作成 - C言語とelで様々なゲームを作ろう](http://ponk.jp/cpp/el/othello)
--[ChainerでオセロのAIをつくってみる～前編～](http://qiita.com/kanlkan/items/6bff417519ed7d5ce4da)
+- [ChainerでオセロのAIをつくってみる～前編～](http://qiita.com/kanlkan/items/6bff417519ed7d5ce4da)
 
 - [オセロの勝ち方・コツ](http://bassy84.net/othello.syosin.html)
 - [オセロで勝つ6のコツと意識するべきこと3つ。絶対勝ちたい人必見！](https://kaumo.jp/topic/46156)
@@ -226,4 +226,7 @@ GUIを実装する
 - [Chainer1.5.0をWindowsにインストールする](http://qiita.com/icoxfog417/items/ca1521f9d62183cea234)
 - [定番のConvolutional Neural Networkをゼロから理解する](https://deepage.net/deep_learning/2016/11/07/convolutional_neural_network.html)
 - [Chainer 1.11.0で畳み込みニューラルネットワークを試してみる](http://data.gunosy.io/entry/2016/07/28/180943)
+- [【Chainer】畳み込みニューラルネットワークによる文書分類](http://qiita.com/ichiroex/items/f225f6d8eceb6796cc7e)
+- [人工知能に関する断創録](http://aidiary.hatenablog.com/entry/20151007/1444223445)
+- [Convolutional Neural Networkを実装する](http://qiita.com/icoxfog417/items/5aa1b3f87bb294f84bac)
 
