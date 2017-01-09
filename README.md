@@ -225,4 +225,5 @@ GUIを実装する
 - [オセロプログラムの評価関数の改善について](https://www.kankyo-u.ac.jp/f/845/1044.pdf)
 - [Chainer1.5.0をWindowsにインストールする](http://qiita.com/icoxfog417/items/ca1521f9d62183cea234)
 - [定番のConvolutional Neural Networkをゼロから理解する](https://deepage.net/deep_learning/2016/11/07/convolutional_neural_network.html)
+- [Chainer 1.11.0で畳み込みニューラルネットワークを試してみる](http://data.gunosy.io/entry/2016/07/28/180943)
 
