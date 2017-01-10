@@ -46,6 +46,9 @@ class Classifier(Chain):
         report({'loss': loss, 'accuracy': accuracy}, self)
         return loss
 
+#シグモイド関数
+def sigmoid(x):
+    return 1.0 / (1.0 + np.exp(-x))
 
 def print_board(board):
     for i in range(8):
