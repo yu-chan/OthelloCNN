@@ -31,7 +31,9 @@ class MLP(Chain):
 
     def __call__(self, x):
         h1 = F.relu(self.l1(x))
+        # h1 = simoid(self.l1(x))
         h2 = F.relu(self.l2(h1))
+        # h2 = simoid(self.l2(h2))
         y = self.l3(h2)
         return y
 
